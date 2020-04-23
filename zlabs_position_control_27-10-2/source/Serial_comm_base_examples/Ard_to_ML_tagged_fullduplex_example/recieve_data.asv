@@ -1,0 +1,17 @@
+delete(instrfindall);
+com_name = find_arduino_com_windowsOS();
+connection = serial('COM28','BaudRate',115200);
+fopen(connection);
+A=[];
+while (connection.BytesAvailable ==0)
+
+end
+
+tic
+hold on
+while connection.BytesAvailable >0
+     new_point=str2num(fscanf(connection))
+     A =  [A new_point];
+     B = [ B T
+end
+toc
